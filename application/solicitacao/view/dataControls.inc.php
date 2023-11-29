@@ -54,7 +54,7 @@ switch ($_GET['acao']) {
 				<meta charset="UTF-8">
 				
 				<div style="width: 80%; height: 60px; background-color: #17803C; text-align: center; padding: 40px;">
-					<img src="http://servicos.amauc.org.br/sge/application/images/logo-amauc.png" style="position: relative; top: 0px; height:60px;" >
+					<img src="http://servicos.amauc.org.br/sge/application/images/logo-cidema.png" style="position: relative; top: 0px; height:60px;" >
 				</div>
 
 				<div style="width: 80%; height: 24px; background-color: #FFF; color: #17803C; font-size: 26px; text-align: center; padding: 40px; border: 1px solid #17803C">
@@ -85,7 +85,7 @@ switch ($_GET['acao']) {
 
 					<br/>
 					Atenciosamente, <br/>
-					<img src="http://servicos.amauc.org.br/sge/application/images/logo-amauc.png" /><br/>
+					<img src="http://servicos.amauc.org.br/sge/application/images/logo-cidema.png" /><br/>
 					Esta é uma mensagem automática. Por favor, não responda esse e-mail<br />
 					Sistema desenvolvido e mantido pela RAISWeb.
 				</div>
@@ -145,7 +145,7 @@ switch ($_GET['acao']) {
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 				
 				<div style="width: 80%; height: 60px; background-color: #17803C; text-align: center; padding: 40px;">
-					<img src="http://servicos.amauc.org.br/sge/application/images/logo-amauc.png" style="position: relative; top: 0px; height:60px;" >
+					<img src="http://servicos.amauc.org.br/sge/application/images/logo-cidema.png" style="position: relative; top: 0px; height:60px;" >
 				</div>
 
 				<div style="width: 80%; height: 24px; background-color: #FFF; color: #17803C; font-size: 26px; text-align: center; padding: 40px; border: 1px solid #17803C">
@@ -174,7 +174,7 @@ switch ($_GET['acao']) {
 
 					<br/>
 					Atenciosamente, <br/>
-					<img src="http://servicos.amauc.org.br/sge/application/images/logo-amauc.png" /><br/>
+					<img src="http://servicos.amauc.org.br/sge/application/images/logo-cidema.png" /><br/>
 					Esta é uma mensagem automática. Por favor, não responda esse e-mail<br />
 					Sistema desenvolvido e mantido pela RAISWeb.
 				</div>
@@ -247,7 +247,7 @@ switch ($_GET['acao']) {
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 				
 				<div style="width: 80%; height: 60px; background-color: #17803C; text-align: center; padding: 40px;">
-					<img src="http://servicos.amauc.org.br/sge/application/images/logo-amauc.png" style="position: relative; top: 0px; height:60px;" >
+					<img src="http://servicos.amauc.org.br/sge/application/images/logo-cidema.png" style="position: relative; top: 0px; height:60px;" >
 				</div>
 
 				<div style="width: 80%; height: 24px; background-color: #FFF; color: #17803C; font-size: 26px; text-align: center; padding: 40px; border: 1px solid #17803C">
@@ -276,7 +276,7 @@ switch ($_GET['acao']) {
 
 					<br/>
 					Atenciosamente, <br/>
-					<img src="http://servicos.amauc.org.br/sge/application/images/logo-amauc.png" /><br/>
+					<img src="http://servicos.amauc.org.br/sge/application/images/logo-cidema.png" /><br/>
 					Esta é uma mensagem automática. Por favor, não responda esse e-mail<br />
 					Sistema desenvolvido e mantido pela RAISWeb.
 				</div>
@@ -328,7 +328,7 @@ switch ($_GET['acao']) {
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 				
 				<div style="width: 80%; height: 60px; background-color: #17803C; text-align: center; padding: 40px;">
-					<img src="http://servicos.amauc.org.br/sge/application/images/logo-amauc.png" style="position: relative; top: 0px; height:60px;" >
+					<img src="http://servicos.amauc.org.br/sge/application/images/logo-cidema.png" style="position: relative; top: 0px; height:60px;" >
 				</div>
 
 				<div style="width: 80%; height: 24px; background-color: #FFF; color: #17803C; font-size: 26px; text-align: center; padding: 40px; border: 1px solid #17803C">
@@ -357,7 +357,7 @@ switch ($_GET['acao']) {
 
 					<br/>
 					Atenciosamente, <br/>
-					<img src="http://servicos.amauc.org.br/sge/application/images/logo-amauc.png" /><br/>
+					<img src="http://servicos.amauc.org.br/sge/application/images/logo-cidema.png" /><br/>
 					Esta é uma mensagem automática. Por favor, não responda esse e-mail<br />
 					Sistema desenvolvido e mantido pela RAISWeb.
 				</div>
@@ -409,7 +409,7 @@ switch ($_GET['acao']) {
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 				
 				<div style="width: 80%; height: 60px; background-color: #17803C; text-align: center; padding: 40px;">
-					<img src="http://servicos.amauc.org.br/sge/application/images/logo-amauc.png" style="position: relative; top: 0px; height:60px;" >
+					<img src="http://servicos.amauc.org.br/sge/application/images/logo-cidema.png" style="position: relative; top: 0px; height:60px;" >
 				</div>
 
 				<div style="width: 80%; height: 24px; background-color: #FFF; color: #17803C; font-size: 26px; text-align: center; padding: 40px; border: 1px solid #17803C">
@@ -438,7 +438,7 @@ switch ($_GET['acao']) {
 
 					<br/>
 					Atenciosamente, <br/>
-					<img src="http://servicos.amauc.org.br/sge/application/images/logo-amauc.png" /><br/>
+					<img src="http://servicos.amauc.org.br/sge/application/images/logo-cidema.png" /><br/>
 					Esta é uma mensagem automática. Por favor, não responda esse e-mail<br />
 					Sistema desenvolvido e mantido pela RAISWeb.
 				</div>

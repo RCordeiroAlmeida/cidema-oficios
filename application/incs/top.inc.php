@@ -7,7 +7,7 @@
     <nav class="navbar navbar-static-top white-bg" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-            <img src="application/images/logo-amauc.png" style="height: 30px;top: 11px;position: relative;"/>
+            <img src="application/images/logo-cidema.png" style="height: 30px;top: 11px;position: relative;"/>
             <!--<label style="position:relative; top:12px; font-size:20px;">DançaWEB</label>-->
         </div>
 

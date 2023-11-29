@@ -6,7 +6,7 @@
     $sql = "SELECT e.*, c.cid_nome FROM entidade AS e INNER JOIN cidade as c ON c.cid_cod = e.cid_cod WHERE ent_situacao = 1 ORDER BY ent_nome";
     $ati = $data->find('dynamic', $sql);
 
-    $sql = "SELECT * FROM entidade WHERE ent_situacao = 0 ORDER BY ent_nome";
+    $sql = "SELECT e.*, c.cid_nome FROM entidade AS e INNER JOIN cidade as c ON c.cid_cod = e.cid_cod WHERE ent_situacao = 0 ORDER BY ent_nome";
     $ina = $data->find('dynamic', $sql);
 ?>
 
@@ -18,27 +18,27 @@
         timeOut: 5000
     };
     <?php
-    switch ($_GET[ms]) {
-        case 1:
-            echo 'toastr.success("Cliente cadastrado com sucesso!", "Incluido!");';
+        switch ($_GET[ms]) {
+            case 1:
+                echo 'toastr.success("Cliente cadastrado com sucesso!", "Incluido!");';
+                break;
+
+            case 2:
+                echo 'toastr.success("Cliente atualizado com sucesso", "Atualizado!");';
             break;
 
-        case 2:
-            echo 'toastr.success("Cliente atualizado com sucesso", "Atualizado!");';
+            case 3:
+                echo 'toastr.success("Cliente excluido com sucesso", "Exluido!");';
             break;
 
-        case 3:
-            echo 'toastr.success("Cliente excluido com sucesso", "Exluido!");';
+            case 4:
+                echo 'toastr.info("Cliente foi inativado", "Inativado!");';
             break;
 
-        case 4:
-            echo 'toastr.info("Cliente foi inativado", "Inativado!");';
+            case 5:
+                echo 'toastr.success("Cliente foi reativado", "Reativado!");';
             break;
-
-        case 5:
-            echo 'toastr.success("Cliente foi reativado", "Reativado!");';
-            break;
-    }
+        }
     ?>
 </script>
 <div class="row wrapper border-bottom white-bg page-heading">
@@ -146,9 +146,9 @@
                                             echo '
                                             <tr>
                                                 <td>' . str_pad($ati[$i]['ent_cod'], 4, '0', STR_PAD_LEFT) . '</td>
-                                                <td>' . $ati[$i]['ent_nome'] . '</td>
-                                                <td>' . $ati[$i]['ent_cnpj'] . '</td>
-                                                <td>' . $ati[$i]['cid_nome'] . '</td>
+                                                <td>' . $ina[$i]['ent_nome'] . '</td>
+                                                <td>' . $ina[$i]['ent_cnpj'] . '</td>
+                                                <td>' . $ina[$i]['cid_nome'] . '</td>
                                             ';
                                             if($_SESSION['cidema_userPermissao'] == 1){
 

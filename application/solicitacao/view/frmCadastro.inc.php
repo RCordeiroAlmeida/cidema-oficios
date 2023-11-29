@@ -52,7 +52,7 @@ $setor = $data->find('dynamic', $sql);
                 <div class="row form-group">
                     <div class="col-sm-2">
                         <label class="control-label" for="sol_data">Data da solicitação:</label>
-                        <input name="sol_data" type="date" class="form-control blockenter" id="sol_data" style="text-transform:uppercase; text-align: center;" value="<?php echo date('Y-m-d') ?>" readonly></input>
+                        <input name="sol_data" type="date" class="form-control blockenter" id="sol_data" style="text-transform:uppercase; text-align: center;" value="<?php echo date('Y-m-d') ?>" min="<?php echo date('Y-m-d')?>" eadonly></input>
                     </div>
 
                     <div style="visibility: hidden; width:0; height: 0;">

@@ -1,6 +1,18 @@
 {
+    "name": "vendor/cidema-oficios",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Vendor\\CidemaOficios\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rafael",
+            "email": "74336014+RCordeiroAlmeida@users.noreply.github.com"
+        }
+    ],
     "require": {
-        "dompdf/dompdf": "^2.0",
-        "mpdf/mpdf": "^8.1"
+        "dompdf/dompdf": "^2.0"
     }
 }

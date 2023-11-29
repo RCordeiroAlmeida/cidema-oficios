@@ -38,13 +38,7 @@
     </script>
 
     <style type="text/css">
-	    .gray-bg{
-	        background-image: url('application/images/bg.jpg');
-	        -moz-background-size: cover;
-			-webkit-background-size: cover;
-			background-size: cover;
-			background-position: center center;
-	    }
+
 
         input{
             background-color: transparent !important;
@@ -53,7 +47,7 @@
             border-left: none !important;
             border-top: none !important;
             margin-bottom: 20px;
-            color: #fff !important;
+            color: #000 !important;
         }
 	</style>
 </head>
@@ -64,7 +58,7 @@
         <div>
             <div>
             	<br /><br /><br /><br /><br /><br /><br />
-                <img src="application/images/logo-amauc.png" style="width: 300px;">                
+                <img src="application/images/logo-cidema.png" style="width: 300px;">                
             </div>            
             <form class="m-t" role="form" action="?module=index&action=valida_senha" method="POST">
                 <input type="hidden"    name="amauc_idSession" value="<?php echo $randon;?>" />

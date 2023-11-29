@@ -5,6 +5,10 @@
 
     $sql = 'SELECT ent_cod, ent_nome FROM entidade WHERE ent_situacao = 1';
     $destinatario = $data->find('dynamic', $sql);
+
+    $sql = 'SELECT dtp_cod, dtp_descricao FROM documento_tipo WHERE dtp_situacao = 1';
+    $tipo = $data->find('dynamic', $sql);
+
 ?>
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-9 col-xs-8">
@@ -47,7 +51,7 @@
                 <div class="row form-group">
                     <div class="col-sm-2">
                         <label class="control-label" for="doc_data">Data:</label>
-                        <input name="doc_data" type="date" class="form-control blockenter" id="est_uf" style="text-transform:uppercase;" value="<?php echo date('Y-m-d')?>" required />
+                        <input name="doc_data" type="date" class="form-control blockenter" id="est_uf" style="text-transform:uppercase;" value="<?php echo date('Y-m-d')?>" min="<?php echo date('Y-m-d'); ?>" required />
                     </div>
                     
                     <div class="col-sm-3">
@@ -64,13 +68,13 @@
                     </div>                    
 
                     <div class="col-sm-2">
-                        <label class="control-label" for="doc_destinatario">Tipo de Documento:</label>
+                        <label class="control-label" for="dtp_cod">Tipo de Documento:</label>
                         <a href="?module=cadastro&acao=novo_tipo" class="pull-right"><i class="fa fa-plus"></i></a>
-                        <select class="form-control selectpicker" data-live-search="true" data-size="6" id="doc_destinatario" name="doc_destinatario" required>
+                        <select class="form-control selectpicker" data-live-search="true" data-size="6" id="dtp_cod" name="dtp_cod" required>
                             <option value="">-- Selecione --</option>
                             <?php
-                            for ($i = 0; $i < count($destinatario); $i++) {
-                                echo '<option value="' . $destinatario[$i]['dtp_cod'] . '">' . $destinatario[$i]['dtp_descricao'] . '</option>';
+                            for ($i = 0; $i < count($tipo); $i++) {
+                                echo '<option value="' . $tipo[$i]['dtp_cod'] . '">' . $tipo[$i]['dtp_descricao'] . '</option>';
                             }
                             ?>
 

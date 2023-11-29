@@ -2,11 +2,25 @@
     if(!isset($_SESSION) || $_SESSION['cidema_userPermissao'] != 1){
         echo'<script>window.location="?module=index&acao=logout"</script>';
     }
-    $sql = "SELECT * FROM documento WHERE doc_situacao = 1 ORDER BY doc_data";
+    $sql = "SELECT doc.*, dtp.dtp_descricao FROM documento AS doc INNER JOIN documento_tipo as dtp ON doc.dtp_cod = dtp.dtp_cod WHERE doc_situacao = 1 ORDER BY doc_data";
     $ati = $data->find('dynamic', $sql);
 
-    $sql = "SELECT * FROM documento WHERE doc_situacao = 0 ORDER BY doc_data";
+    $sql = "SELECT doc.*, dtp.dtp_descricao FROM documento AS doc INNER JOIN documento_tipo as dtp ON doc.dtp_cod = dtp.dtp_cod WHERE doc_situacao = 0 ORDER BY doc_data";
     $ina = $data->find('dynamic', $sql);
+    
+    if ($_POST['param_0']) { 
+        $sql = "SELECT doc.*, dtp.dtp_descricao FROM documento as doc INNER JOIN documento_tipo as dtp ON doc.dtp_cod = dtp.dtp_cod WHERE doc.doc_cod=" . $_POST['param_0'];
+        $response = $data->find('dynamic', $sql);
+
+        echo'
+            <div class="row wrapper border-bottom white-bg page-heading" style="padding-top: 3%; background-color: #39a9dd; color: #ffffff">
+                <h3>Novo Documento adicionado</h3>
+                <h4>Tipo: '.$response[0]['dtp_descricao'].' | Número: '.str_pad($response[0]['doc_numero'], 4, '0', STR_PAD_LEFT) . '/'.date('Y', strtotime($response[0]['doc_data'])).'</h4>
+            </div>
+        
+        ';
+    }  
+
 ?>
 
 <script>
@@ -52,6 +66,9 @@
     </div>
     <div class="col-lg-6 col-xs-6" style="text-align:right;">
         <br /><br />
+        <a href="#" onclick="imprimir(<?php echo $_SESSION['cidema_userId']?>)" class="btn btn-warning" style="height: 34px;">
+            <i class="fa fa-print" aria-hidden="true"></i> <span class="hidden-xs hidden-sm">Imprimir</span>
+        </a>
         <a href="?module=lancamento&acao=novo_documento" class="btn btn-primary" style="height: 34px;">
             <span class="glyphicon glyphicon-plus-sign"></span> <span class="hidden-xs hidden-sm">Novo</span>
         </a>
@@ -73,9 +90,9 @@
                                 <table class="table table-striped table-bordered table-hover dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th style="width:10px;">Cód.</th>
-                                            <th style="width:80px;">Assunto</th>
                                             <th style="width:10px;">Número</th>
+                                            <th style="width:80px;">Tipo de Documento</th>
+                                            <th style="width:80px;">Assunto</th>
                                             <th style="width:10px;">...</th>
                                         </tr>
                                     </thead>
@@ -84,17 +101,28 @@
                                         for ($i = 0; $i < count($ati); $i++) {
                                             echo '
                                                 <tr>
-                                                    <td>' . str_pad($ati[$i]['doc_cod'], 4, '0', STR_PAD_LEFT) . '</td>
+                                                    <td>' . str_pad($ati[$i]['doc_numero'], 4, '0', STR_PAD_LEFT) . '/'.date('Y', strtotime($ati[$i]['doc_data'])).'</td>
+                                                    <td>' . $ati[$i]['dtp_descricao'] . '</td>
                                                     <td>' . $ati[$i]['doc_assunto'] . '</td>
-                                                    <td>' . $ati[$i]['doc_numero'] . '</td>
-                                                    <td>
+                                                    <td>';
+                                                        if($ati[$i]['doc_anexo']){
+                                                            echo '
+                                                                <a href="'.$ati[$i]['doc_anexo'].'" target="_blank">
+                                                                    <span class="fa-stack">
+                                                                        <i class="fa fa-square fa-stack-2x"></i>
+                                                                        <i class="fa fa-eye fa-stack-1x fa-inverse"></i>
+                                                                    </span>
+                                                                </a>
+                                                            ';
+                                                        }echo'
+                                                    
                                                         <a href="#" onclick="nextPage(\'?module=lancamento&acao=edita_doc\', ' . $ati[$i]['doc_cod'] . ')">
                                                             <span class="fa-stack">
                                                                 <i class="fa fa-square fa-stack-2x"></i>
                                                                 <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
                                                             </span>
                                                         </a>
-                                                        <a href="#" onClick=\'inativar("' . $ati[$i]['cid_cod'] . '", "' . $ati[$i]['cid_nome'] . '");\' title="Inativar Cliente" style="text-decoration:none;">
+                                                        <a href="#" onClick=\'inativar("' . $ati[$i]['doc_cod'] . '", "' . str_pad($ati[$i]['doc_numero'], 4, '0', STR_PAD_LEFT) . '/'.date('Y', strtotime($ati[$i]['doc_data'])) . '");\' title="Inativar Documento" style="text-decoration:none;">
                                                             <span class="fa-stack">
                                                                 <i class="fa fa-square fa-stack-2x"></i>
                                                                 <i class="fa fa-thumbs-o-down fa-stack-1x fa-inverse"></i>
@@ -115,25 +143,24 @@
                             <div class="table-responsive" style="overflow-x: initial;">
                                 <br class="hidden-md hidden-lg" />
                                 <table class="table table-striped table-bordered table-hover dataTables-example">
-                                    <thead>
+                                <thead>
                                         <tr>
-                                            <th style="width:10px;">Cód.</th>
-                                            <th style="width:80px;">Cidade</th>
-                                            <th style="width:10px;">UF</th>
+                                            <th style="width:10px;">Número</th>
+                                            <th style="width:80px;">Tipo de Documento</th>
+                                            <th style="width:80px;">Assunto</th>
                                             <th style="width:10px;">...</th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
                                         <?php
                                         for ($i = 0; $i < count($ina); $i++) {
                                             echo '
                                                 <tr>
-                                                    <td>' . $ina[$i]['cid_cod'] . '</td>
-                                                    <td>' . $ina[$i]['cid_nome'] . '</td>
-                                                    <td>' . $ina[$i]['est_uf'] . '</td>
+                                                    <td>' . str_pad($ina[$i]['doc_numero'], 4, '0', STR_PAD_LEFT) . '/'.date('Y', strtotime($ina[$i]['doc_data'])).'</td>
+                                                    <td>' . $ina[$i]['dtp_descricao'] . '</td>
+                                                    <td>' . $ina[$i]['doc_assunto'] . '</td>
                                                     <td>
-                                                        <a href="#" onClick=\'ativar("' . $ina[$i]['cid_cod'] . '", "' . $ina[$i]['cid_nome'] . '");\' title="Reativar cidade" style="text-decoration:none;">
+                                                        <a href="#" onClick=\'ativar("' . $ina[$i]['doc_cod'] . '", "' . $ina[$i]['doc_numero'] . '");\' title="Reativar Documento" style="text-decoration:none;">
                                                             <span class="fa-stack">
                                                                 <i class="fa fa-square fa-stack-2x"></i>
                                                                 <i class="fa fa-thumbs-o-up fa-stack-1x fa-inverse"></i>
@@ -205,7 +232,7 @@
                 text: "Deseja realmente reativar esta Cidade?<br /><b>" + nome + "</b>",
                 type: "warning",
                 showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
+                confirmButtonColor: "#18A689",
                 confirmButtonText: "Sim",
                 cancelButtonText: "Não",
                 closeOnConfirm: false,
@@ -224,5 +251,9 @@
                     toastr.info("Nenhum dado foi afetado!", "Cancelado");
                 }
             })
+        }
+
+        function imprimir(usu_cod){
+            nextPage('?module=relatorio&acao=lista_atividade', usu_cod);
         }
     </script>

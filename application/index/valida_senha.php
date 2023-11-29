@@ -10,19 +10,10 @@
         <script src="library/inspinia/js/jquery-2.1.4.js"></script>
   		<script src="library/inspinia/js/plugins/jquery-ui/jquery-ui.min.js"></script>
 
-  		<style type="text/css">
-  			.gray-bg{
-				background-image:url(application/images/bg.jpg);
-				-moz-background-size: cover;
-				-webkit-background-size: cover;
-				background-size: cover;
-				background-position: center center;
-			}
-  		</style>
   	</head>
   	<body class="gray-bg">
   		<div style="position:absolute;top:30%;left:36%;">
-  			<img src="application/images/logo-amauc.png" style="width:100%;">
+  			<img src="application/images/logo-cidema.png" style="width:100%;">
   		</div>
 		<?php
 			session_start();

@@ -4,31 +4,20 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit19348d4723b3fb40cb8e7691e8a2cf54
+class ComposerStaticInit18b31250867b9e4a857068c7e681984d
 {
-    public static $files = array (
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
-    );
-
     public static $prefixLengthsPsr4 = array (
-        's' => 
+        'V' => 
         array (
-            'setasign\\Fpdi\\' => 14,
+            'Vendor\\CidemaOficios\\' => 21,
         ),
         'S' => 
         array (
             'Svg\\' => 4,
             'Sabberworm\\CSS\\' => 15,
         ),
-        'P' => 
-        array (
-            'Psr\\Log\\' => 8,
-            'Psr\\Http\\Message\\' => 17,
-        ),
         'M' => 
         array (
-            'Mpdf\\PsrLogAwareTrait\\' => 22,
-            'Mpdf\\' => 5,
             'Masterminds\\' => 12,
         ),
         'F' => 
@@ -38,14 +27,13 @@ class ComposerStaticInit19348d4723b3fb40cb8e7691e8a2cf54
         'D' => 
         array (
             'Dompdf\\' => 7,
-            'DeepCopy\\' => 9,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'setasign\\Fpdi\\' => 
+        'Vendor\\CidemaOficios\\' => 
         array (
-            0 => __DIR__ . '/..' . '/setasign/fpdi/src',
+            0 => __DIR__ . '/../..' . '/src',
         ),
         'Svg\\' => 
         array (
@@ -54,22 +42,6 @@ class ComposerStaticInit19348d4723b3fb40cb8e7691e8a2cf54
         'Sabberworm\\CSS\\' => 
         array (
             0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/src',
-        ),
-        'Psr\\Log\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
-        ),
-        'Psr\\Http\\Message\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-        ),
-        'Mpdf\\PsrLogAwareTrait\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/mpdf/psr-log-aware-trait/src',
-        ),
-        'Mpdf\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/mpdf/mpdf/src',
         ),
         'Masterminds\\' => 
         array (
@@ -83,10 +55,6 @@ class ComposerStaticInit19348d4723b3fb40cb8e7691e8a2cf54
         array (
             0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
         ),
-        'DeepCopy\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
-        ),
     );
 
     public static $classMap = array (
@@ -97,9 +65,9 @@ class ComposerStaticInit19348d4723b3fb40cb8e7691e8a2cf54
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit19348d4723b3fb40cb8e7691e8a2cf54::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit19348d4723b3fb40cb8e7691e8a2cf54::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit19348d4723b3fb40cb8e7691e8a2cf54::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit18b31250867b9e4a857068c7e681984d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit18b31250867b9e4a857068c7e681984d::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit18b31250867b9e4a857068c7e681984d::$classMap;
 
         }, null, ClassLoader::class);
     }
