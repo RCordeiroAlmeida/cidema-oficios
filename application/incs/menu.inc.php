@@ -74,22 +74,6 @@
                     </ul>
                 </div>
             </li>
-
-            <?php 
-            	if($_GET['module']=='dashboard'){
-            		echo '<li class="active">';
-                    //Valida qual variavel vai receber active
-                    unset($item_sel);
-                    $acao = explode('_',$_GET['acao']);
-            	}else{
-            		echo '<li>';
-            	}
-
-                echo '
-                <a href="?module=dashboard&acao=lista"><i class="fa fa-pie-chart"></i><span class="nav-label">Dashboard</span></a>';                       
-            			
-            ?>	    
-            </li>
             
             <?php 
             	if($_GET['module']=='cadastro'){

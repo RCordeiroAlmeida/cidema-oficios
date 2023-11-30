@@ -1,17 +1,15 @@
 <?php
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 require_once('library/MySql.php');
 require_once('library/DataManipulation.php');
-use Dompdf\Dompdf;
+use Mpdf\Mpdf;
 
-$dompdf = new Dompdf();
+$mpdf = new \Mpdf\Mpdf();
 $data = new DataManipulation();
 
 $logoPath = file_get_contents('../../../images/logo-cidema.png');
 $logoData = base64_encode($logoPath);
 $logoTag = '<img src="data:image/png;base64,' . $logoData . '" width="200"/>';
-
-$dompdf->setPaper('A4', 'landscape');
 
 $sql = 'SELECT
             doc.*,
@@ -76,11 +74,9 @@ $html .= '
     </body>
 </html>';
 
-$dompdf->loadHtml($html);
+$mpdf->WriteHTML($html);
 
 // Renderiza o documento PDF
-$dompdf->render();
+$mpdf->Output('meu_primeiro_pdf.pdf', 'D');
 
-// Exibe o documento PDF no navegador
-$dompdf->stream('listagem-de-atividades.pdf', array('Attachment' => false));
 ?>

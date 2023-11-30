@@ -36,7 +36,7 @@
 					$result = $login->validateUser(array('usu_login' => $user,'usu_senha' => $pass),$idSession);
 					
 					if($result['login'] == 'Logado'){
-						echo "<meta http-equiv='refresh' content='1;URL=?module=dashboard&acao=lista'>"; 
+						echo "<meta http-equiv='refresh' content='1;URL=?module=lancamento&acao=lista_documento'>"; 
 					}else{
 						echo "<meta http-equiv='refresh' content='0;URL=?module=index&erro=1'>";
 					}

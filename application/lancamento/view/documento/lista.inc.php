@@ -13,13 +13,17 @@
         $response = $data->find('dynamic', $sql);
 
         echo'
-            <div class="row wrapper border-bottom white-bg page-heading" style="padding-top: 3%; background-color: #39a9dd; color: #ffffff">
-                <h3>Novo Documento adicionado</h3>
-                <h4>Tipo: '.$response[0]['dtp_descricao'].' | Número: '.str_pad($response[0]['doc_numero'], 4, '0', STR_PAD_LEFT) . '/'.date('Y', strtotime($response[0]['doc_data'])).'</h4>
-            </div>
-        
-        ';
+
+            <script type="text/javascript">
+                swal({
+                    title: "Novo Documento adicionado!",
+                    text: "Tipo: '.$response[0]['dtp_descricao'].'<br/>Número: '.str_pad($response[0]['doc_numero'], 4, '0', STR_PAD_LEFT) . '/'.date('Y', strtotime($response[0]['doc_data'])).'",
+                    icon: "success"
+                });
+            </script>';
     }  
+
+    
 
 ?>
 
@@ -66,9 +70,9 @@
     </div>
     <div class="col-lg-6 col-xs-6" style="text-align:right;">
         <br /><br />
-        <a href="#" onclick="imprimir(<?php echo $_SESSION['cidema_userId']?>)" class="btn btn-warning" style="height: 34px;">
+        <!-- <a href="#" onclick="imprimir(<?php echo $_SESSION['cidema_userId']?>)" class="btn btn-warning" style="height: 34px;">
             <i class="fa fa-print" aria-hidden="true"></i> <span class="hidden-xs hidden-sm">Imprimir</span>
-        </a>
+        </a> -->
         <a href="?module=lancamento&acao=novo_documento" class="btn btn-primary" style="height: 34px;">
             <span class="glyphicon glyphicon-plus-sign"></span> <span class="hidden-xs hidden-sm">Novo</span>
         </a>
@@ -181,7 +185,7 @@
         </div>
     </div>
     <br />
-
+    
     <script>
         $(document).ready(function() {
             $('.dataTables-example').DataTable({
