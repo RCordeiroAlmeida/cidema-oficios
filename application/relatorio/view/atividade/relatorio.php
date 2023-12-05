@@ -1,8 +1,8 @@
 <?php
 // ob_start(); 
-require_once './vendor/autoload.php';
-// require ('../../../../library/MySql.php'); // Conecta ao BD
-// require ('../../../../library/DataManipulation.php'); 
+require_once '../../../../vendor/autoload.php';
+require ('../../../../library/MySql.php'); // Conecta ao BD
+require ('../../../../library/DataManipulation.php'); 
 //
 use Mpdf\Mpdf;
 
@@ -11,7 +11,7 @@ $data = new DataManipulation();
 //
 setlocale(LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8', 'portuguese');
 
-/*$logoPath = file_get_contents('../../../images/logo-cidema.png');
+$logoPath = file_get_contents('../../../images/logo-cidema.png');
 $logoData = base64_encode($logoPath);
 $logoTag = '<img src="data:image/png;base64,' . $logoData . '" width="200"/>';
 
@@ -54,6 +54,7 @@ $html = '
             <thead>
                 <tr style="border: 1px solid black; padding: 8px; text-align: left;">
                     <th>Número</th>
+                    <th>Data</th>
                     <th>Tipo</th>
                     <th>Assunto</th>
                     <th>Criado por</th>
@@ -65,7 +66,7 @@ foreach ($result as $row) {
     $html .= '
         <tr>
             <td style="border: 1px solid black; padding: 8px;">' . str_pad($row['doc_numero'], 4, '0', STR_PAD_LEFT) . '/' . date('Y', strtotime($row['doc_data'])) . '</td>
-            <td style="border: 1px solid black; padding: 8px;">' . $row['ati_data'] . '</td>
+            <td style="border: 1px solid black; padding: 8px;">' . $row['doc_data'] . '</td> <!-- Corrigir aqui -->
             <td style="border: 1px solid black; padding: 8px;">' . $row['dtp_descricao'] . '</td>
             <td style="border: 1px solid black; padding: 8px;">' . $row['doc_assunto'] . '</td>
             <td style="border: 1px solid black; padding: 8px;">' . $row['usu_nome'] . '</td>
@@ -77,19 +78,15 @@ $html .= '
         </table>
     </body>
 </html>';
-*/
-$html = "teste";
-$mpdf->ignore_invalid_utf8 = true;
-	ob_clean();//Limpa o buffer de saída
-	$mpdf->WriteHTML($html);	
-	// Rodapé	
-	$mpdf->SetFooter(array(
-		'L' => array('content' => 'Página {PAGENO}',),
-		'C' => array('content' => 'Azambuja',),
-		'R' => array('content' => date("d/m/Y"),),
-		'Line' => 1
-	), 'O');
-	$mpdf->Output();
-	exit;
 
-?>
+$mpdf->ignore_invalid_utf8 = true;
+ob_clean(); // Limpa o buffer de saída
+$mpdf->WriteHTML($html);
+// Rodapé
+$mpdf->SetFooter(array(
+    'L' => array('content' => date("d/m/Y"),),
+    'R' => array('content' => 'Página {PAGENO}',),
+    'Line' => 1
+), 'O');
+$mpdf->Output();
+exit;

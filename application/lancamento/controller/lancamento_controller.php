@@ -18,6 +18,11 @@
 			require_once 'application/lancamento/view/'.$tela[1].'/frmVisualiza.inc.php';
 		break;
 
+		case 'filtra':
+			require_once 'application/lancamento/view/'.$tela[1].'/frmFiltro.inc.php';
+		break;
+
+
 		case 'deleta':
 		case 'grava':
 		case 'update':

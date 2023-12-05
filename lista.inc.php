@@ -70,7 +70,7 @@
     </div>
     <div class="col-lg-6 col-xs-6" style="text-align:right;">
         <br /><br />
-        <a href="?module=lancamento&acao=filtra_documento" class="btn btn-warning" style="height: 34px;">
+        <a href="application/relatorio/view/atividade/relatorio.php" target="_blank" class="btn btn-warning" style="height: 34px;">
             <i class="fa fa-print" aria-hidden="true"></i> <span class="hidden-xs hidden-sm">Imprimir</span>
         </a>
         <a href="?module=lancamento&acao=novo_documento" class="btn btn-primary" style="height: 34px;">
