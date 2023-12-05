@@ -70,9 +70,9 @@
     </div>
     <div class="col-lg-6 col-xs-6" style="text-align:right;">
         <br /><br />
-        <!-- <a href="#" onclick="imprimir(<?php echo $_SESSION['cidema_userId']?>)" class="btn btn-warning" style="height: 34px;">
+        <a href="#" onclick="imprimir(<?php echo $_SESSION['cidema_userId']?>)" class="btn btn-warning" style="height: 34px;">
             <i class="fa fa-print" aria-hidden="true"></i> <span class="hidden-xs hidden-sm">Imprimir</span>
-        </a> -->
+        </a>
         <a href="?module=lancamento&acao=novo_documento" class="btn btn-primary" style="height: 34px;">
             <span class="glyphicon glyphicon-plus-sign"></span> <span class="hidden-xs hidden-sm">Novo</span>
         </a>

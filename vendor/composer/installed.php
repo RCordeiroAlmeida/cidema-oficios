@@ -3,7 +3,7 @@
         'name' => 'vendor/cidema-oficios',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '4e0244237b3b037adfb637ceae871ea420b7c163',
+        'reference' => 'a44526408161f7a4f3c9c82de5f6ed4b8006cdb3',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -130,7 +130,7 @@
         'vendor/cidema-oficios' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '4e0244237b3b037adfb637ceae871ea420b7c163',
+            'reference' => 'a44526408161f7a4f3c9c82de5f6ed4b8006cdb3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

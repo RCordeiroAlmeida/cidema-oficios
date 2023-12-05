@@ -1,13 +1,17 @@
 <?php
-require_once 'vendor/autoload.php';
-require_once('library/MySql.php');
-require_once('library/DataManipulation.php');
+// ob_start(); 
+require_once './vendor/autoload.php';
+// require ('../../../../library/MySql.php'); // Conecta ao BD
+// require ('../../../../library/DataManipulation.php'); 
+//
 use Mpdf\Mpdf;
 
-$mpdf = new \Mpdf\Mpdf();
+$mpdf = new Mpdf();
 $data = new DataManipulation();
+//
+setlocale(LC_ALL, 'pt_BR', 'pt_BR.iso-8859-1', 'pt_BR.utf-8', 'portuguese');
 
-$logoPath = file_get_contents('../../../images/logo-cidema.png');
+/*$logoPath = file_get_contents('../../../images/logo-cidema.png');
 $logoData = base64_encode($logoPath);
 $logoTag = '<img src="data:image/png;base64,' . $logoData . '" width="200"/>';
 
@@ -73,10 +77,19 @@ $html .= '
         </table>
     </body>
 </html>';
-
-$mpdf->WriteHTML($html);
-
-// Renderiza o documento PDF
-$mpdf->Output('meu_primeiro_pdf.pdf', 'D');
+*/
+$html = "teste";
+$mpdf->ignore_invalid_utf8 = true;
+	ob_clean();//Limpa o buffer de saída
+	$mpdf->WriteHTML($html);	
+	// Rodapé	
+	$mpdf->SetFooter(array(
+		'L' => array('content' => 'Página {PAGENO}',),
+		'C' => array('content' => 'Azambuja',),
+		'R' => array('content' => date("d/m/Y"),),
+		'Line' => 1
+	), 'O');
+	$mpdf->Output();
+	exit;
 
 ?>
